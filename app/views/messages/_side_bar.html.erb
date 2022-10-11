@@ -1,22 +1,14 @@
 <div class="username">
 <div class="name"><%= link_to current_user.name, edit_user_path(current_user) , method: :get %></div>
-<div class="create_chat"> <a href="#">チャットを作成する</a></div>
+<div class="create_chat"> <%= link_to "チャットを作成する", new_room_path %></div>
 </div>
 
 <div class="room_part">
+<% current_user.rooms.each do |room| %>
   <div class="room">
-    <div class=room_name><a href="#">techroom1</a></div>
+    <div class=room_name>
+    <%= link_to current_user.name, edit_user_path(current_user) , method: :get %></div>
   </div>
-  <div class="room">
-    <div class=room_name><a href="#">techroom2</a></div>
+  <% end %>
   </div>
-  <div class="room">
-    <div class=room_name><a href="#">techroom2</a></div>
-  </div>
-  <div class="room">
-    <div class=room_name><a href="#">techroom2</a></div>
-  </div>
-  <div class="room">
-    <div class=room_name><a href="#">techroom2</a></div>
-  </div>
-</div>
+
