@@ -7,7 +7,7 @@
 <% current_user.rooms.each do |room| %>
   <div class="room">
     <div class=room_name>
-    <%= link_to current_user.name, edit_user_path(current_user) , method: :get %></div>
+      <%= link_to room.name, room_messages_path(room) %></div>
   </div>
   <% end %>
   </div>
